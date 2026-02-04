@@ -1,0 +1,56 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Plus44 - We build apps | Bondi, Sydney" } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title} | Plus44</title>
+  </head>
+  <body class="bg-white text-gray-900 min-h-screen flex flex-col">
+    <header class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+      <nav class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
+        <a href="/" class="flex items-center gap-2">
+          <img src="/images/logo-v2.jpg" alt="Plus44" class="h-10 w-auto rounded-lg" />
+          <span class="font-semibold text-lg hidden sm:inline">Plus44</span>
+        </a>
+        <div class="flex items-center gap-6">
+          <a href="/" class="text-gray-600 hover:text-primary transition-colors">Home</a>
+          <a href="/apps" class="text-gray-600 hover:text-primary transition-colors">Apps</a>
+          <a href="/support" class="text-gray-600 hover:text-primary transition-colors">Support</a>
+        </div>
+      </nav>
+    </header>
+
+    <main class="flex-grow">
+      <slot />
+    </main>
+
+    <footer class="bg-gray-50 border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-4 py-8">
+        <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+          <div class="flex items-center gap-2">
+            <img src="/images/logo-v2.jpg" alt="Plus44" class="h-8 w-auto rounded-lg" />
+            <span class="text-gray-600">© {new Date().getFullYear()} Plus44</span>
+          </div>
+          <div class="flex items-center gap-6 text-sm">
+            <a href="/privacy-policy" class="text-gray-500 hover:text-primary transition-colors">Privacy Policy</a>
+            <a href="/support" class="text-gray-500 hover:text-primary transition-colors">Support</a>
+            <a href="mailto:support@plus44.xyz" class="text-gray-500 hover:text-primary transition-colors">Contact</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
