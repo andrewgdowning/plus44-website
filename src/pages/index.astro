@@ -7,13 +7,32 @@ import Layout from '../layouts/Layout.astro';
   <section class="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-20 lg:py-32">
     <div class="max-w-6xl mx-auto px-4">
       <div class="flex flex-col items-center text-center">
-        <!-- Animated Logo -->
-        <div class="animate-float animate-shimmer mb-8">
-          <img 
-            src="/images/logo-v2.jpg" 
-            alt="Plus44 Logo" 
-            class="w-48 h-48 md:w-64 md:h-64 rounded-3xl shadow-2xl"
-          />
+        <!-- Animated Logo - Floating Characters -->
+        <div class="flex items-center justify-center gap-2 md:gap-4 mb-8">
+          <!-- Plus -->
+          <div class="animate-float-1">
+            <img 
+              src="/images/logo-plus.jpg" 
+              alt="+" 
+              class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full shadow-xl animate-glow object-cover"
+            />
+          </div>
+          <!-- First 4 -->
+          <div class="animate-float-2">
+            <img 
+              src="/images/logo-four.jpg" 
+              alt="4" 
+              class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full shadow-xl animate-glow object-cover"
+            />
+          </div>
+          <!-- Second 4 -->
+          <div class="animate-float-3">
+            <img 
+              src="/images/logo-four.jpg" 
+              alt="4" 
+              class="w-24 h-24 md:w-32 md:h-32 lg:w-40 lg:h-40 rounded-full shadow-xl animate-glow object-cover"
+            />
+          </div>
         </div>
         
         <!-- Tagline -->
